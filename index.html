@@ -146,11 +146,12 @@
 	  <section>
 	    <h3>Summary</h3>
 	    <ul>
-	      <li class="fragment fade-up"><b>Small-business lending</b> is <b class="fragment highlight-green">positively</b> related to the <b>T1 Leverage ratio</b>.</li>
-	      <li class="fragment fade-up">The coefficient on the T1 Leverage ratio is not affected by MDI status.</li>
+	      <!-- <li class="fragment fade-up"><b>Small-business lending</b> is <b class="fragment highlight-green">positively</b> related to the <b>T1 Leverage ratio</b>.</li> -->
+	      <li class="fragment fade-up">Small business lending is <b class="fragment highlight-green">increasing</b> in Tier 1 capital.</li>
+	      <li class="fragment fade-up">The coefficient between Tier 1 capital and small business lending is<b class="fragment highlight-green"> significantly</b> greater for Hispanic-owned MDIs.</li>
 	      <li class="fragment fade-up">Equity investments still may have a larger effect on MDIs given their smaller size.</li>
 	      <li class="fragment fade-up"><b>Small-business lending</b> is <b class="fragment highlight-red">decreasing</b> in <b>bank size</b>.</li>
-	      <li class="fragment fade-up">The model <b class="fragment highlight-red">$R^2$ should be improved</b>.</li>
+	      <li class="fragment fade-up">The model <b class="fragment highlight-red">$R^2$ can be inproved</b>.</li>
 	    </ul>
 	  </section>
 	</section>
@@ -160,14 +161,15 @@
 	<section>
 	  <section>
 	    <h3>Fixed-Effects Model: $ROA$</h3>
-	    <p align="left">This model investigates the determinants of changes in bank $ROA$.  It has both firm and time fixed effects ($\alpha_{it}$).  Each independent variable is lagged one year relative to the dependent variable.  The model has the following specification:</p>
+	    <p align="left">This model investigates the determinants of changes in bank $ROA$.  It has firm fixed effects ($\alpha_{i}$).  Each independent variable is lagged one year relative to the dependent variable.  The model has the following specification:</p>
 	  </section>
 
 	  <section>
 	    <p align="left"><span class="fragment highlight-green">$ROA$</span>$ = \beta_1 ($<span class="fragment highlight-green">$Capital\ Ratio$</span>$) +$</p>
 	    <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-green">$\% \Delta SB\ Loans$</span>$ + \beta_4 \frac{NPA}{TA} + $</p>
 	    <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-green">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
-	    <p align="right">$+ $<span class="fragment highlight-green">$\alpha_{it}$</span>$ + \epsilon_{it}$</p>
+	    	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + $<span class="fragment highlight-green">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
+	    <!-- <p align="right">$+ $<span class="fragment highlight-green">$\alpha_{it}$</span>$ + \epsilon_{it}$</p> -->
 	  </section>
 
 	  <section>
