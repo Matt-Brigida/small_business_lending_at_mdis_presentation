@@ -88,11 +88,6 @@
 	      <iframe src="./medians_ta_te.html" height="100%" width="100%"></iframe>
 	    </div>
 	  </section>
-	  <!-- 	  <section> -->
-	    <!-- 	    <div class="stretch"> -->
-	      <!--     <iframe src="./medians_amt_loans.html" height="100%" width="100%"></iframe> -->
-	      <!--   </div> -->
-	    <!-- </section> -->
 	  <section data-background-color="#D9D9D9">
 	    <div class="stretch">
 	      <iframe src="./aa_summary_statistics.htm" height="100%" width="100%"></iframe>
@@ -145,6 +140,11 @@
 	      <iframe src="https://micfm.shinyapps.io/PLUM_FE_model/" height="100%" width="100%"></iframe>
 	    </div>
 	  </section>
+	  <section data-background-color="#D9D9D9">
+	    <div class="stretch">
+	      <iframe src="tablesChangeNumSBL.htm" height="100%" width="100%"></iframe>
+	    </div>
+	  </section>
 	  <section>
 	    <h3>Summary</h3>
 	    <ul>
@@ -161,6 +161,7 @@
 	    <ul>
 	      <li class="fragment fade-up">The negative effect of <i>ROA</i> on small business lending is lessened as firm size increases.</li>
 	      <li class="fragment fade-up">The negative effect of <i>NPA</i> on small business lending is increased as firm size increases.</li>
+        <li class="fragment fade-up">Greater amounts of equity orthogonal to tier 1 capital, <b class="fragment highlight-green">increases</b> both the change in the amount and number of small business loans.</li>
 	    </ul>
 	  </section>
 	</section>
@@ -178,7 +179,6 @@
 	    <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-green">$\% \Delta SB\ Loans$</span>$ + \beta_4 \frac{NPA}{TA} + $</p>
 	    <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-blue">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
 	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}$<span class="fragment highlight-blue">$(log(TA)*NPA)$</span> $+ $<span class="fragment highlight-blue">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
-	    <!-- <p align="right">$+ $<span class="fragment highlight-green">$\alpha_{it}$</span>$ + \epsilon_{it}$</p> -->
 	  </section>
 
 	  <section>
@@ -187,7 +187,6 @@
 	    <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-red">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
 	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}$<span class="fragment highlight-blue">$(log(TA)*ROA)$</span></p>
 	      <p align="right">$+ $<span class="fragment highlight-blue">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
-	    <!-- <p align="right">$+ $<span class="fragment highlight-green">$\alpha_{it}$</span>$ + \epsilon_{it}$</p> -->
 	  </section>
 	  <section>
 	    <p align="left">where <i>SB</i> denotes <i>Small Business</i>, <i>NPA</i> denotes <i>Non-Performing Assets</i>, and <i>TA</i> denotes <i>Total Assets</i>.  <i>post crisis</i> is an indicator variable for the years 2012--2015 inclusive.  <i>fin. crisis</i> is an indicator for the years 2008 through 2011. <i>de novo</i> indicates the bank is less than 5 years old.</p>
@@ -228,45 +227,20 @@
 	      <li class="fragment fade-up">The model <b class="fragment highlight-red">$R^2$ should be improved</b>.</li>
 	    </ul>
 	  </section>
+<section>
+  <ul>
+    <li class="fragment fade-up">The larger the bank, the larger the effect of <i>NPA</i> in reducing <i>ROA.</i></li>
+    <li class="fragment fade-up">The larger the bank, the larger the effect of <i>ROA</i> in reducing <i>NPA.</i></li>
+    <li class="fragment fade-up">Greater amounts of equity orthogonal to tier 1 capital, <b class="fragment highlight-red">reduces</b> <i>ROA</i> and <b class="fragment highlight-red">increases<b></b> <i>NPA</i>.</li>
 
+  </ul>
+</section>
 	</section>
 
 
 
 
 
-	<!-- the effect of bank size (total assets) on the coefficients of our model -->
-	<section>
-	  <section>
-	    <h3>The Effect of Bank Size on Paramters</h3>
-	    <p align="left">
-	      The following charts show the estimated coeffeicients on T1 Leverage Ratio as a function of bank size.
-	    </p>
-	  </section>
-	  <section data-background-image="./code_image.jpg">
-	    <div class="stretch">
-	      <iframe src="viz_ROA_size_less_100.html" height="76%" width="80%"></iframe>
-	    </div>
-	  </section>
-
-	  <section data-background-image="./code_image.jpg">
-	    <div class="stretch">
-	      <iframe src="viz_ROA_size_100_250.html" height="76%" width="80%"></iframe>
-	    </div>
-	  </section>
-
-	  <section data-background-image="./code_image.jpg">
-	    <div class="stretch">
-	      <iframe src="viz_ROA_size_250_1000.html" height="76%" width="80%"></iframe>
-	    </div>
-	  </section>
-
-	  <section data-background-image="./code_image.jpg">
-	    <div class="stretch">
-	      <iframe src="./viz_sb_size_250_1000.html" height="76%" width="80%"></iframe>
-	    </div>
-	  </section>
-	</section>
 
 	  <section>
 	    <a href="https://github.com/FinancialMarkets/PLUM_presentation">The Presentation</a>
