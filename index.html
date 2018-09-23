@@ -1,256 +1,256 @@
 <!doctype html>
 <html>
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
- <title>Small-Business Lending at Minority-Owned Depository Institutions</title>
-
-
-    <link rel="stylesheet" href="css/reveal.css">
-    <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
-    <link rel="stylesheet" href="css/theme/league.css">
-
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-	<section>
-	  <section data-background-image="./city_skyline.jpg">
-	    <h2>Small-Business Lending at Minority-Owned Depository Institutions </h2>
-	    <br>
-	    <br>
-	    <br>
-	    <br>
-	    <br>
-	    <br>
-	  </section>
-	  <section>
-	    <h2>Small-Business Lending at Minority-Owned Depository Institutions </h2>
-	    <br>
- <p>James R. Barth∗+, Aron Betru∗, Matthew Brigida∗×, and Christopher Lee∗ </p>
-	  </section>
-	</section>
-
-	<!-- intro, lit, and paper 1 -->
-		<section>
-		  <section>
-		    <h3>Background and Literature</h3>
-		  </section>
-		  <section>
-		    <h4><a href="https://www.milkeninstitute.org/publications/view/922">Minority-Owned Depository Institutions: A Market Overview</a></h4>
-		    <p align="left">In this report we highlight the <span class="fragment highlight-red">difficulties minority-owned small businesses face in obtaining funding</span> from financial institutions.  Our findings highlight the role of <span class="fragment highlight-green">Minority-Owned Depository Institutions (MDIs)</span> in providing funding to these small businesses, and thereby acting as <span class="fragment highlight-green">economic development engines</span> in these communities.</p>
-		  </section>
-		  <section>
-		    <h3>Other Literature</h3>
-
-	  </section>
-	  <section>
-	    <h3><a href="https://home.treasury.gov/news/press-release/sm0283">Opportunity Zones</a></h3>
-	    <p align="left">Opportunity zones were created as part of the recent Tax Cut and Jobs Act.  The Treasury has identified <span class="fragment highlight-red">distressed communities</span> throughout the country.  Investment in these communities will receive <span class="fragment highlight-green">tax incentives.</span></p>
-
-	  </section>
-		</section>
-
-		<!-- data -->
-	<section>
-	  <section>
-	    <h3>The Data</h3>
-	    <p align="left">Our panel data are obtained from the <a href="https://cdr.ffiec.gov/public/">Call Reports</a> banks are required to file with the FDIC.</p>
-	    <ul>
-	      <li>Our data set has 710,688 bank-quarter observations, and ranges from January 2001 to December 2017 inclusive.</li>
-	      <li>Since some of these observations may contain ‘NA’ (say, for example, a bank has no small-business loans), the following regressions will be run on subsets of the total 710,688 for which a panel without missing observations can be built.</li>
-	      <li><a href="https://github.com/Matt-Brigida/FFIEC_Call_Reports/tree/master/data/"> We have made the data available here.</a></li>
-	    </ul>
-	  </section>
-	  <!-- descriptive statistics -->
-	  <section>
-	    <div class="stretch">
-	      <!-- <h6>Median Values</h6> -->
-	      <iframe src="./first_medians.html" height="100%" width="100%"></iframe>
-	    </div>
-	  </section>
-	  <section>
-	    <div class="stretch">
-	      <iframe src="./medians_ta_te.html" height="100%" width="100%"></iframe>
-	    </div>
-	  </section>
-	  <section data-background-color="#D9D9D9">
-	    <div class="stretch">
-	      <iframe src="./aa_summary_statistics.htm" height="100%" width="100%"></iframe>
-	    </div>
-	  </section>
-	  <section data-background-color="#D9D9D9">
-	    <div class="stretch">
-	      <iframe src="h_summary_statistics.htm" height="100%" width="100%"></iframe>
-	    </div>
-	  </section>
-	  <section data-background-color="#D9D9D9">
-	    <div class="stretch">
-	      <iframe src="non_mdi_summary_statistics.htm" height="100%" width="100%"></iframe>
-	    </div>
-	  </section>
-	</section>
-
-	<!-- method and results, SB loans -->
-	<section>
-	  <section>
-	    <h3>Fixed-Effects Model: <i>% Change Small Business Loans</i></h3>
-	    <p align="left">This model investigates the determinants of changes in small-business lending in our panel.  We estimate a fixed-effect model with bank fixed effects ($\alpha_{i}$).  Each independent variable is lagged one year relative to the dependent variable.  We use two dependent variables, the percent change in the (1) dollar amount, and (2) number of small business loans.  The model has the following specification:</p>
-	  </section>
-	  <section>
-	    <p align="left"><span class="fragment highlight-green">$\% \Delta SB\ Loans$</span>$ = \beta_1 ($<span class="fragment highlight-green">$Capital\ Ratio$</span>$) +$</p>
-	    <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-blue">$ROA$</span>$ + \beta_4 \frac{NPA}{TA} + $</p>
-	    <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-red">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
-	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}TE$</p>
-	    <p align="right">$\beta_{11}$<span class="fragment highlight-blue">$(ln(TA)*ROA)$</span>$ + \beta_{12}$<span class="fragment highlight-red">$(ln(TA)*NPA)$</span></p>
-	      <p align="right">$ + $<span class="fragment highlight-blue">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
-	  </section>
-	  <section>
-	    <p align="left">where <i>SB</i> denotes <i>Small Business</i>, <i>NPA</i> denotes <i>Non-Performing Assets</i>, and <i>TA</i> denotes <i>Total Assets</i>.  <i>post crisis</i> is an indicator variable for the years 2012--2015 inclusive. <i>fin. crisis</i> is an indicator for the years 2008 through 2011. <i>de novo</i> indicates the bank is less than 5 years old.</p>
-	  </section>
-	</section>
+  <title>Small-Business Lending at Minority-Owned Depository Institutions</title>
 
 
-	<section>
-	  <section>
-	    <h4>Fixed-Effects Model: <i>% Change Small Business Loans</i></h4>
-	    <h5>Amount and Number of Loans Results</h5>
-	  </section>
-	  <section data-background-color="#D9D9D9">
-	    <div class="stretch">
-	      <iframe src="tablesChangeASBL.htm" height="100%" width="100%"></iframe>
-	    </div>
-	  </section>
-	  <section data-background-image="./code_image.jpg">
-	    <div class="stretch">
-	      <iframe src="https://micfm.shinyapps.io/PLUM_FE_model/" height="100%" width="100%"></iframe>
-	    </div>
-	  </section>
-	  <section data-background-color="#D9D9D9">
-	    <div class="stretch">
-	      <iframe src="tablesChangeNumSBL.htm" height="100%" width="100%"></iframe>
-	    </div>
-	  </section>
-	  <section>
-	    <h3>Summary</h3>
-	    <ul>
-	      <!-- <li class="fragment fade-up"><b>Small-business lending</b> is <b class="fragment highlight-green">positively</b> related to the <b>T1 Leverage ratio</b>.</li> -->
-	      <li class="fragment fade-up">Small business lending is <b class="fragment highlight-green">increasing</b> in Tier 1 capital.</li>
-	      <li class="fragment fade-up">The coefficient between Tier 1 capital and small business lending is<b class="fragment highlight-green"> significantly</b> greater for Hispanic-owned MDIs.</li>
-	      <li class="fragment fade-up">Equity investments still may have a larger effect on MDIs given their smaller size.</li>
-	      <li class="fragment fade-up"><b>Small-business lending</b> is <b class="fragment highlight-red">decreasing</b> in <b>bank size</b>.</li>
-	      <li class="fragment fade-up">The model <b class="fragment highlight-red">$R^2$ can be improved</b>.</li>
-	    </ul>
-	  </section>
-	  <section>
-	    <h3>Summary</h3>
-	    <ul>
-	      <li class="fragment fade-up">The negative effect of <i>ROA</i> on small business lending is lessened as firm size increases.</li>
-	      <li class="fragment fade-up">The negative effect of <i>NPA</i> on small business lending is increased as firm size increases.</li>
-        <li class="fragment fade-up">Greater amounts of equity orthogonal to tier 1 capital, <b class="fragment highlight-green">increases</b> both the change in the amount and number of small business loans.</li>
-	    </ul>
-	  </section>
-	</section>
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+  <link rel="stylesheet" href="css/theme/league.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Printing and PDF exports -->
+  <script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <section data-background-image="./city_skyline.jpg">
+          <h2>Small-Business Lending at Minority-Owned Depository Institutions </h2>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </section>
+        <section>
+          <h2>Small-Business Lending at Minority-Owned Depository Institutions </h2>
+          <br>
+          <p>James R. Barth∗+, Aron Betru∗, Matthew Brigida∗×, and Christopher Lee∗ </p>
+        </section>
+      </section>
+
+      <!-- intro, lit, and paper 1 -->
+      <section>
+        <section>
+          <h3>Background and Literature</h3>
+        </section>
+        <section>
+          <h4><a href="https://www.milkeninstitute.org/publications/view/922">Minority-Owned Depository Institutions: A Market Overview</a></h4>
+          <p align="left">In this report we highlight the <span class="fragment highlight-red">difficulties minority-owned small businesses face in obtaining funding</span> from financial institutions.  Our findings highlight the role of <span class="fragment highlight-green">Minority-Owned Depository Institutions (MDIs)</span> in providing funding to these small businesses, and thereby acting as <span class="fragment highlight-green">economic development engines</span> in these communities.</p>
+        </section>
+        <section>
+          <h3>Other Literature</h3>
+
+        </section>
+        <section>
+          <h3><a href="https://home.treasury.gov/news/press-release/sm0283">Opportunity Zones</a></h3>
+          <p align="left">Opportunity zones were created as part of the recent Tax Cut and Jobs Act.  The Treasury has identified <span class="fragment highlight-red">distressed communities</span> throughout the country.  Investment in these communities will receive <span class="fragment highlight-green">tax incentives.</span></p>
+
+        </section>
+      </section>
+
+      <!-- data -->
+      <section>
+        <section>
+          <h3>The Data</h3>
+          <p align="left">Our panel data are obtained from the <a href="https://cdr.ffiec.gov/public/">Call Reports</a> banks are required to file with the FDIC.</p>
+          <ul>
+            <li>Our data set has 710,688 bank-quarter observations, and ranges from January 2001 to December 2017 inclusive.</li>
+            <li>Since some of these observations may contain ‘NA’ (say, for example, a bank has no small-business loans), the following regressions will be run on subsets of the total 710,688 for which a panel without missing observations can be built.</li>
+            <li><a href="https://github.com/Matt-Brigida/FFIEC_Call_Reports/tree/master/data/"> We have made the data available here.</a></li>
+          </ul>
+        </section>
+        <!-- descriptive statistics -->
+        <section>
+          <div class="stretch">
+            <!-- <h6>Median Values</h6> -->
+            <iframe src="./first_medians.html" height="100%" width="100%"></iframe>
+          </div>
+        </section>
+        <section>
+          <div class="stretch">
+            <iframe src="./medians_ta_te.html" height="100%" width="100%"></iframe>
+          </div>
+        </section>
+        <section data-background-color="#D9D9D9">
+          <div class="stretch">
+            <iframe src="./aa_summary_statistics.htm" height="100%" width="100%"></iframe>
+          </div>
+        </section>
+        <section data-background-color="#D9D9D9">
+          <div class="stretch">
+            <iframe src="h_summary_statistics.htm" height="100%" width="100%"></iframe>
+          </div>
+        </section>
+        <section data-background-color="#D9D9D9">
+          <div class="stretch">
+            <iframe src="non_mdi_summary_statistics.htm" height="100%" width="100%"></iframe>
+          </div>
+        </section>
+      </section>
+
+      <!-- method and results, SB loans -->
+      <section>
+        <section>
+          <h3>Fixed-Effects Model: <i>% Change Small Business Loans</i></h3>
+          <p align="left">This model investigates the determinants of changes in small-business lending in our panel.  We estimate a fixed-effect model with bank fixed effects ($\alpha_{i}$).  Each independent variable is lagged one year relative to the dependent variable.  We use two dependent variables, the percent change in the (1) dollar amount, and (2) number of small business loans.  The model has the following specification:</p>
+        </section>
+        <section>
+          <p align="left"><span class="fragment highlight-green">$\% \Delta SB\ Loans$</span>$ = \beta_1 ($<span class="fragment highlight-green">$Capital\ Ratio$</span>$) +$</p>
+          <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-blue">$ROA$</span>$ + \beta_4 \frac{NPA}{TA} + $</p>
+          <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-red">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
+          <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}TE$</p>
+          <p align="right">$\beta_{11}$<span class="fragment highlight-blue">$(ln(TA)*ROA)$</span>$ + \beta_{12}$<span class="fragment highlight-red">$(ln(TA)*NPA)$</span></p>
+          <p align="right">$ + $<span class="fragment highlight-blue">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
+        </section>
+        <section>
+          <p align="left">where <i>SB</i> denotes <i>Small Business</i>, <i>NPA</i> denotes <i>Non-Performing Assets</i>, and <i>TA</i> denotes <i>Total Assets</i>.  <i>post crisis</i> is an indicator variable for the years 2012--2015 inclusive. <i>fin. crisis</i> is an indicator for the years 2008 through 2011. <i>de novo</i> indicates the bank is less than 5 years old.</p>
+        </section>
+      </section>
+
+
+      <section>
+        <section>
+          <h4>Fixed-Effects Model: <i>% Change Small Business Loans</i></h4>
+          <h5>Amount and Number of Loans Results</h5>
+        </section>
+        <section data-background-color="#D9D9D9">
+          <div class="stretch">
+            <iframe src="tablesChangeASBL.htm" height="100%" width="100%"></iframe>
+          </div>
+        </section>
+        <section data-background-image="./code_image.jpg">
+          <div class="stretch">
+            <iframe src="https://micfm.shinyapps.io/PLUM_FE_model/" height="100%" width="100%"></iframe>
+          </div>
+        </section>
+        <section data-background-color="#D9D9D9">
+          <div class="stretch">
+            <iframe src="tablesChangeNumSBL.htm" height="100%" width="100%"></iframe>
+          </div>
+        </section>
+        <section>
+          <h3>Summary</h3>
+          <ul>
+            <!-- <li class="fragment fade-up"><b>Small-business lending</b> is <b class="fragment highlight-green">positively</b> related to the <b>T1 Leverage ratio</b>.</li> -->
+            <li class="fragment fade-up">Small business lending is <b class="fragment highlight-green">increasing</b> in Tier 1 capital.</li>
+            <li class="fragment fade-up">The coefficient between Tier 1 capital and small business lending is<b class="fragment highlight-green"> significantly</b> greater for Hispanic-owned MDIs.</li>
+            <li class="fragment fade-up">Equity investments still may have a larger effect on MDIs given their smaller size.</li>
+            <li class="fragment fade-up"><b>Small-business lending</b> is <b class="fragment highlight-red">decreasing</b> in <b>bank size</b>.</li>
+            <li class="fragment fade-up">The model <b class="fragment highlight-red">$R^2$ can be improved</b>.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Summary</h3>
+          <ul>
+            <li class="fragment fade-up">The negative effect of <i>ROA</i> on small business lending is lessened as firm size increases.</li>
+            <li class="fragment fade-up">The negative effect of <i>NPA</i> on small business lending is increased as firm size increases.</li>
+            <li class="fragment fade-up">Greater amounts of equity orthogonal to tier 1 capital, <b class="fragment highlight-green">increases</b> both the change in the amount and number of small business loans.</li>
+          </ul>
+        </section>
+      </section>
 
 
 
-	<section>
-	  <section>
-	    <h3>Fixed-Effects Model: $ROA$ and $NPA$</h3>
-	    <p align="left">This model investigates the determinants of changes in bank $ROA$ and $NPA$.  It has firm fixed effects ($\alpha_{i}$).  Each independent variable is lagged one year relative to the dependent variable.  The model has the following specification:</p>
-	  </section>
+      <section>
+        <section>
+          <h3>Fixed-Effects Model: $ROA$ and $NPA$</h3>
+          <p align="left">This model investigates the determinants of changes in bank $ROA$ and $NPA$.  It has firm fixed effects ($\alpha_{i}$).  Each independent variable is lagged one year relative to the dependent variable.  The model has the following specification:</p>
+        </section>
 
-	  <section>
-	    <p align="left"><span class="fragment highlight-green">$ROA$</span>$ = \beta_1 ($<span class="fragment highlight-green">$Capital\ Ratio$</span>$) +$</p>
-	    <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-green">$\% \Delta SB\ Loans$</span>$ + \beta_4 \frac{NPA}{TA} + $</p>
-	    <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-blue">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
-	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}$<span class="fragment highlight-blue">$(log(TA)*NPA)$</span> $+ $<span class="fragment highlight-blue">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
-	  </section>
+        <section>
+          <p align="left"><span class="fragment highlight-green">$ROA$</span>$ = \beta_1 ($<span class="fragment highlight-green">$Capital\ Ratio$</span>$) +$</p>
+          <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-green">$\% \Delta SB\ Loans$</span>$ + \beta_4 \frac{NPA}{TA} + $</p>
+          <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-blue">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
+          <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}$<span class="fragment highlight-blue">$(log(TA)*NPA)$</span> $+ $<span class="fragment highlight-blue">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
+        </section>
 
-	  <section>
-	    <p align="left"><span class="fragment highlight-blue">$NPA$</span>$ = \beta_1 ($<span class="fragment highlight-red">$Capital\ Ratio$</span>$) +$</p>
-	    <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-red">$\% \Delta SB\ Loans$</span>$ + \beta_4 \frac{ROA}{TA} + $</p>
-	    <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-red">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
-	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}$<span class="fragment highlight-blue">$(log(TA)*ROA)$</span></p>
-	      <p align="right">$+ $<span class="fragment highlight-blue">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
-	  </section>
-	  <section>
-	    <p align="left">where <i>SB</i> denotes <i>Small Business</i>, <i>NPA</i> denotes <i>Non-Performing Assets</i>, and <i>TA</i> denotes <i>Total Assets</i>.  <i>post crisis</i> is an indicator variable for the years 2012--2015 inclusive.  <i>fin. crisis</i> is an indicator for the years 2008 through 2011. <i>de novo</i> indicates the bank is less than 5 years old.</p>
-	  </section>
-	</section>
+        <section>
+          <p align="left"><span class="fragment highlight-blue">$NPA$</span>$ = \beta_1 ($<span class="fragment highlight-red">$Capital\ Ratio$</span>$) +$</p>
+          <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-red">$\% \Delta SB\ Loans$</span>$ + \beta_4 \frac{ROA}{TA} + $</p>
+          <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-red">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
+          <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}$<span class="fragment highlight-blue">$(log(TA)*ROA)$</span></p>
+          <p align="right">$+ $<span class="fragment highlight-blue">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
+        </section>
+        <section>
+          <p align="left">where <i>SB</i> denotes <i>Small Business</i>, <i>NPA</i> denotes <i>Non-Performing Assets</i>, and <i>TA</i> denotes <i>Total Assets</i>.  <i>post crisis</i> is an indicator variable for the years 2012--2015 inclusive.  <i>fin. crisis</i> is an indicator for the years 2008 through 2011. <i>de novo</i> indicates the bank is less than 5 years old.</p>
+        </section>
+      </section>
 
-	<section>
-	  <section>
-	    <h4>Fixed-Effects Model: <i>ROA</i></h4>
-	    <h5>Results</h5>
-	  </section>
-	  <section data-background-color="#D9D9D9">
-            <div class="stretch">
-              <iframe src="roa_model_results.htm" height="100%" width="100%"></iframe>
-            </div>
-	  </section>
-	  <!-- <section data-background-image="./code_image.jpg"> -->
-	  <!--   <div class="stretch"> -->
-	  <!--     <iframe src="https://micfm.shinyapps.io/PLUM_FE_ROA/" height="100%" width="100%"></iframe> -->
-	  <!--   </div> -->
-	  <!-- </section> -->
-	  <section>
-	    <h4>Fixed-Effects Model: <i>NPA</i></h4>
-	    <h5>Results</h5>
-	  </section>
-	  <section data-background-color="#D9D9D9">
-            <div class="stretch">
-              <iframe src="npa_model_results.htm" height="100%" width="100%"></iframe>
-            </div>
-	  </section>
-	  	  <section>
-	    <h3>Summary</h3>
-	    <ul>
-	      <li class="fragment fade-up">The <b>T1 Leverage Ratio</b> is <b class="fragment highlight-green">positively</b> related to the <b>ROA</b>.</li>
-	      <li class="fragment fade-up">For <b class="fragment highlight-green">African-American</b> banks, the <b>T1 Risk-Based Capital Ratio</b> has a <b class="fragment highlight-green">positive</b> effect on <b>ROA</b>.</li>
-	      <li class="fragment fade-up"><b>ROA</b> is <b class="fragment highlight-green">increasing</b> in <b>Small-Business lending</b>.</li>
-	      <li class="fragment fade-up"><b>ROA</b> is <b class="fragment highlight-green">increasing</b> in <b>bank size</b>.</li>
-	      <li class="fragment fade-up">The model <b class="fragment highlight-red">$R^2$ should be improved</b>.</li>
-	    </ul>
-	  </section>
-<section>
-  <ul>
-    <li class="fragment fade-up">The larger the bank, the larger the effect of <i>NPA</i> in reducing <i>ROA.</i></li>
-    <li class="fragment fade-up">The larger the bank, the larger the effect of <i>ROA</i> in reducing <i>NPA.</i></li>
-    <li class="fragment fade-up">Greater amounts of equity orthogonal to tier 1 capital, <b class="fragment highlight-red">reduces</b> <i>ROA</i> and <b class="fragment highlight-red">increases<b></b> <i>NPA</i>.</li>
+      <section>
+        <section>
+          <h4>Fixed-Effects Model: <i>ROA</i></h4>
+          <h5>Results</h5>
+        </section>
+        <section data-background-color="#D9D9D9">
+          <div class="stretch">
+            <iframe src="roa_model_results.htm" height="100%" width="100%"></iframe>
+          </div>
+        </section>
+        <!-- <section data-background-image="./code_image.jpg"> -->
+        <!--   <div class="stretch"> -->
+        <!--     <iframe src="https://micfm.shinyapps.io/PLUM_FE_ROA/" height="100%" width="100%"></iframe> -->
+        <!--   </div> -->
+        <!-- </section> -->
+        <section>
+          <h4>Fixed-Effects Model: <i>NPA</i></h4>
+          <h5>Results</h5>
+        </section>
+        <section data-background-color="#D9D9D9">
+          <div class="stretch">
+            <iframe src="npa_model_results.htm" height="100%" width="100%"></iframe>
+          </div>
+        </section>
+        <section>
+          <h3>Summary</h3>
+          <ul>
+            <li class="fragment fade-up">The <b>T1 Leverage Ratio</b> is <b class="fragment highlight-green">positively</b> related to the <b>ROA</b>.</li>
+            <li class="fragment fade-up">For <b class="fragment highlight-green">African-American</b> banks, the <b>T1 Risk-Based Capital Ratio</b> has a <b class="fragment highlight-green">positive</b> effect on <b>ROA</b>.</li>
+            <li class="fragment fade-up"><b>ROA</b> is <b class="fragment highlight-green">increasing</b> in <b>Small-Business lending</b>.</li>
+            <li class="fragment fade-up"><b>ROA</b> is <b class="fragment highlight-green">increasing</b> in <b>bank size</b>.</li>
+            <li class="fragment fade-up">The model <b class="fragment highlight-red">$R^2$ should be improved</b>.</li>
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li class="fragment fade-up">The larger the bank, the larger the effect of <i>NPA</i> in reducing <i>ROA.</i></li>
+            <li class="fragment fade-up">The larger the bank, the larger the effect of <i>ROA</i> in reducing <i>NPA.</i></li>
+            <li class="fragment fade-up">Greater amounts of equity orthogonal to tier 1 capital, <b class="fragment highlight-red">reduces</b> <i>ROA</i> and <b class="fragment highlight-red">increases<b></b> <i>NPA</i>.</li>
 
-  </ul>
-</section>
-	</section>
-
-
+          </ul>
+        </section>
+      </section>
 
 
 
 
-	  <section>
-	    <a href="https://github.com/FinancialMarkets/PLUM_presentation">The Presentation</a>
-	    <br>
-	    <br>
-	    <a href="https://github.com/Matt-Brigida/FFIEC_Call_Reports">All Code and Data</a>
-	  </section>
 
-      </div>
+
+      <section>
+        <a href="https://github.com/FinancialMarkets/PLUM_presentation">The Presentation</a>
+        <br>
+        <br>
+        <a href="https://github.com/Matt-Brigida/FFIEC_Call_Reports">All Code and Data</a>
+      </section>
+
     </div>
+  </div>
 
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
