@@ -56,12 +56,12 @@
 		  </section>
 		  <section>
 		    <h3>Other Literature</h3>
-	    
+
 	  </section>
 	  <section>
 	    <h3><a href="https://home.treasury.gov/news/press-release/sm0283">Opportunity Zones</a></h3>
 	    <p align="left">Opportunity zones were created as part of the recent Tax Cut and Jobs Act.  The Treasury has identified <span class="fragment highlight-red">distressed communities</span> throughout the country.  Investment in these communities will receive <span class="fragment highlight-green">tax incentives.</span></p>
-	    
+
 	  </section>
 		</section>
 
@@ -120,10 +120,12 @@
 	    <p align="left"><span class="fragment highlight-green">$\% \Delta SB\ Loans$</span>$ = \beta_1 ($<span class="fragment highlight-green">$Capital\ Ratio$</span>$) +$</p>
 	    <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-green">$ROA$</span>$ + \beta_4 \frac{NPA}{TA} + $</p>
 	    <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-green">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
-	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + $<span class="fragment highlight-green">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
+	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}TE$</p>
+	    <p align="right">$\beta_{11}<span class="fragment highlight-green">(ln(TA)*ROA)</span> + \beta_{12}<span class="fragment highlight-green">(ln(TA)*NPA)</span> + $</p>
+	      <p align="right"><span class="fragment highlight-green">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
 	  </section>
 	  <section>
-	    <p align="left">where <i>SB</i> denotes <i>Small Business</i>, <i>NPA</i> denotes <i>Non-Performing Assets</i>, and <i>TA</i> denotes <i>Total Assets</i>.  <i>post crisis</i> is an indicator variable for the years 2012--2015 inclusive.</p>
+	    <p align="left">where <i>SB</i> denotes <i>Small Business</i>, <i>NPA</i> denotes <i>Non-Performing Assets</i>, and <i>TA</i> denotes <i>Total Assets</i>.  <i>post crisis</i> is an indicator variable for the years 2012--2015 inclusive. <i>fin. crisis</i> is an indicator for the years 2008 through 2011. <i>de novo</i> indicates the bank is less than 5 years old.</p>
 	  </section>
 	</section>
 
@@ -151,7 +153,14 @@
 	      <li class="fragment fade-up">The coefficient between Tier 1 capital and small business lending is<b class="fragment highlight-green"> significantly</b> greater for Hispanic-owned MDIs.</li>
 	      <li class="fragment fade-up">Equity investments still may have a larger effect on MDIs given their smaller size.</li>
 	      <li class="fragment fade-up"><b>Small-business lending</b> is <b class="fragment highlight-red">decreasing</b> in <b>bank size</b>.</li>
-	      <li class="fragment fade-up">The model <b class="fragment highlight-red">$R^2$ can be inproved</b>.</li>
+	      <li class="fragment fade-up">The model <b class="fragment highlight-red">$R^2$ can be improved</b>.</li>
+	    </ul>
+	  </section>
+	  <section>
+	    <h3>Summary</h3>
+	    <ul>
+	      <li class="fragment fade-up">The negative effect of <i>ROA</i> on small business lending is lessened as firm size increases.</li>
+	      <li class="fragment fade-up">The negative effect of <i>NPA</i> on small business lending is increased as firm size increases.</li>
 	    </ul>
 	  </section>
 	</section>
@@ -160,20 +169,28 @@
 
 	<section>
 	  <section>
-	    <h3>Fixed-Effects Model: $ROA$</h3>
-	    <p align="left">This model investigates the determinants of changes in bank $ROA$.  It has firm fixed effects ($\alpha_{i}$).  Each independent variable is lagged one year relative to the dependent variable.  The model has the following specification:</p>
+	    <h3>Fixed-Effects Model: $ROA$ and $NPA$</h3>
+	    <p align="left">This model investigates the determinants of changes in bank $ROA$ and $NPA$.  It has firm fixed effects ($\alpha_{i}$).  Each independent variable is lagged one year relative to the dependent variable.  The model has the following specification:</p>
 	  </section>
 
 	  <section>
 	    <p align="left"><span class="fragment highlight-green">$ROA$</span>$ = \beta_1 ($<span class="fragment highlight-green">$Capital\ Ratio$</span>$) +$</p>
 	    <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-green">$\% \Delta SB\ Loans$</span>$ + \beta_4 \frac{NPA}{TA} + $</p>
 	    <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-green">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
-	    	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + $<span class="fragment highlight-green">$\alpha_{i}$</span>$ + \epsilon_{it}$</p>
+	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}$<span class="fragment highlight-green">$(log(TA)*NPA)$</span> $+ <span class="fragment highlight-green">\alpha_{i}$</span>$ + \epsilon_{it}$</p>
 	    <!-- <p align="right">$+ $<span class="fragment highlight-green">$\alpha_{it}$</span>$ + \epsilon_{it}$</p> -->
 	  </section>
 
 	  <section>
-	    <p align="left">where <i>SB</i> denotes <i>Small Business</i>, <i>NPA</i> denotes <i>Non-Performing Assets</i>, and <i>TA</i> denotes <i>Total Assets</i>.  <i>post crisis</i> is an indicator variable for the years 2012--2015 inclusive.</p>
+	    <p align="left"><span class="fragment highlight-green">$NPA$</span>$ = \beta_1 ($<span class="fragment highlight-green">$Capital\ Ratio$</span>$) +$</p>
+	    <p align="right">$+ \beta_2 \frac{Amt.\ SB\ Loans}{TA} + \beta_3$<span class="fragment highlight-green">$\% \Delta SB\ Loans$</span>$ + \beta_4 \frac{NPA}{TA} + $</p>
+	    <p align="right">$+ \beta_5 \frac{Deposits}{TA} + \beta_6$<span class="fragment highlight-green">$log(TA)$</span>$ + \beta_7 (post\ crisis) +$</p>
+	    <p align="right">$ +\beta_8 (fin\ crisis) + \beta_9 (de\ novo) + \beta_{10}$<span class="fragment highlight-green">$(log(TA)*ROA)$</span></p>
+	      <p align="right">$+ <span class="fragment highlight-green">\alpha_{i}$</span>$ + \epsilon_{it}$</p>
+	    <!-- <p align="right">$+ $<span class="fragment highlight-green">$\alpha_{it}$</span>$ + \epsilon_{it}$</p> -->
+	  </section>
+	  <section>
+	    <p align="left">where <i>SB</i> denotes <i>Small Business</i>, <i>NPA</i> denotes <i>Non-Performing Assets</i>, and <i>TA</i> denotes <i>Total Assets</i>.  <i>post crisis</i> is an indicator variable for the years 2012--2015 inclusive.  <i>fin. crisis</i> is an indicator for the years 2008 through 2011. <i>de novo</i> indicates the bank is less than 5 years old.</p>
 	  </section>
 	</section>
 
@@ -184,18 +201,22 @@
 	  </section>
 	  <section data-background-color="#D9D9D9">
             <div class="stretch">
-              <iframe src="ROA_t1_ratio.htm" height="100%" width="100%"></iframe>
+              <iframe src="roa_model_results.htm" height="100%" width="100%"></iframe>
             </div>
 	  </section>
-          <section data-background-color="#D9D9D9">
+	  <!-- <section data-background-image="./code_image.jpg"> -->
+	  <!--   <div class="stretch"> -->
+	  <!--     <iframe src="https://micfm.shinyapps.io/PLUM_FE_ROA/" height="100%" width="100%"></iframe> -->
+	  <!--   </div> -->
+	  <!-- </section> -->
+	  <section>
+	    <h4>Fixed-Effects Model: <i>NPA</i></h4>
+	    <h5>Results</h5>
+	  </section>
+	  <section data-background-color="#D9D9D9">
             <div class="stretch">
-              <iframe src="ROA_t1_RCBR_ratio.htm" height="100%" width="100%"></iframe>
+              <iframe src="npa_model_results.htm" height="100%" width="100%"></iframe>
             </div>
-	  </section>
-	  <section data-background-image="./code_image.jpg">
-	    <div class="stretch">
-	      <iframe src="https://micfm.shinyapps.io/PLUM_FE_ROA/" height="100%" width="100%"></iframe>
-	    </div>
 	  </section>
 	  	  <section>
 	    <h3>Summary</h3>
